@@ -43,7 +43,6 @@ def prioritize(unsorted_requirements):
                     swap = True
             # If the two requirements have not been compared, ask the user which requirement has more priority
             else:
-                counter += 1
                 # Ask the user which requirement has more priority
                 print("\nWhat requirement does have more priority?\n1)", sorted_requirements['requirement'][j], "\n2)", sorted_requirements['requirement'][j + 1])
                 user_input = input("Enter 1 or 2: ")
