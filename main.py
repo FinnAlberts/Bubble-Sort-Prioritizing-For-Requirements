@@ -19,6 +19,7 @@ def bubble_sort(unsorted_requirements):
     
     # Take two elements
     for i in range(len(sorted_requirements)):
+        done_sorting = True
         for j in range(0, len(sorted_requirements) - i - 1):
             # Ask the user which requirement has more priority
             print("\nWhat requirement does have more priority?\n1)", sorted_requirements['requirement'][j], "\n2)", sorted_requirements['requirement'][j + 1])
@@ -39,7 +40,12 @@ def bubble_sort(unsorted_requirements):
 
             # Swap the rows in the dataframe if the second element has more priority
             if user_input == 2:
+                done_sorting = False
                 sorted_requirements.iloc[[j, j + 1]] = sorted_requirements.iloc[[j + 1, j]]
+        
+        # If no swaps were made, the list is sorted
+        if done_sorting:
+            break
     
     # Return the sorted requirements
     return sorted_requirements
